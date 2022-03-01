@@ -2034,7 +2034,27 @@ const scoresAverage = movies.reduce((result, currentData) => {
   // console.log(`currentData = ${currentData.score}`);  
   return result + currentData.score;  
 }, 0);
-console.log(Math.round(scoresAverage / movies.length));
+//console.log(Math.round(scoresAverage / movies.length));
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
-function dramaMoviesScore() {}
+const dramaMoviesScore = movies.filter(movie => movie.genre == 'Drama');
+//movie.score
+// return score / movies.length
+//console.log(dramaMoviesScore);
+
+// Iteration 5: Ordering by year - Order by year, ascending (in growing order)
+const orderByYear = movies.map(movie => movie.year)
+//comparar propiedad .year 
+// sort by older
+
+
+
+// Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
+function orderAlphabetically() {}
+//.title  print substring(0,19)
+
+// BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
+function turnHoursToMinutes() {}
+
+// BONUS - Iteration 8: Best yearly score average - Best yearly score average
+function bestYearAvg() {}
