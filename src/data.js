@@ -2025,7 +2025,10 @@ const getAllDirectors = movies.map(movies => {
   //console.log(getAllDirectors);
 
   // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
-const howManyMovies = movies.filter(movie => movie.director === 'Steven Spielberg' && movie.genre == 'Drama');
+// const howManyMovies = movies.filter(movie =>  movie.director == 'Steven Spielberg' || movie.genre == 'Drama');
+// console.log(howManyMovies);
+
+const howManyMovies = movies.filter(movie =>  movie.director.includes('Steven Spielberg') && movie.genre.includes('Drama'));
 //console.log(howManyMovies);
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
@@ -2034,18 +2037,28 @@ const scoresAverage = movies.reduce((result, currentData) => {
   // console.log(`currentData = ${currentData.score}`);  
   return result + currentData.score;  
 }, 0);
-//console.log(Math.round(scoresAverage / movies.length));
+console.log((scoresAverage / movies.length).toFixed(2));
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
-const dramaMoviesScore = movies.filter(movie => movie.genre == 'Drama');
-//movie.score
+const dramaMoviesScore = movies.filter(movie => {
+  movie.genre.includes('Drama')
+  //console.log(movie.score / movies.length);
+})
+;
+//movie.score sumar score y dar media
 // return score / movies.length
 //console.log(dramaMoviesScore);
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-const orderByYear = movies.map(movie => movie.year)
+const orderByYear = movies.map(movie => {
+  // ES6
+  //numbers.sort((a, b) => a - b);
+  return movies.sort();
+});
 //comparar propiedad .year 
 // sort by older
+
+//console.log(orderByYear);
 
 
 
