@@ -2017,11 +2017,7 @@ if (typeof module !== 'undefined') {
 //     genre: ['Crime', 'Drama'],
 //     score: 9.3
 
-const getAllDirectors = movies.map(movies => {
-  return {
-    director: movies.director
-  }
-  });  
+const getAllDirectors = movies.map(movies =>movies.director);  
   //console.log(getAllDirectors);
 
   // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
@@ -2033,38 +2029,39 @@ const howManyMovies = movies.filter(movie =>  movie.director.includes('Steven Sp
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 const scoresAverage = movies.reduce((result, currentData) => {
-  // console.log(`total =  ${result}`);
-  // console.log(`currentData = ${currentData.score}`);  
+  //  console.log(`total =  ${result}`);
+  //  console.log(`currentData = ${currentData.score}`);  
   return result + currentData.score;  
 }, 0);
-console.log((scoresAverage / movies.length).toFixed(2));
+//console.log((scoresAverage / movies.length).toFixed(2));
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 const dramaMoviesScore = movies.filter(movie => {
-  movie.genre.includes('Drama')
+   return movie.genre.includes('Drama');
   //console.log(movie.score / movies.length);
-})
-;
+});
 //movie.score sumar score y dar media
 // return score / movies.length
 //console.log(dramaMoviesScore);
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-const orderByYear = movies.map(movie => {
-  // ES6
-  //numbers.sort((a, b) => a - b);
-  return movies.sort();
+const orderByYear = movies.map(movie => {  
+  return movie.year;  
 });
 //comparar propiedad .year 
 // sort by older
-
-//console.log(orderByYear);
-
-
+  // ES6
+  //numbers.sort((a, b) => a - b);
+//console.log(orderByYear.sort());
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-function orderAlphabetically() {}
-//.title  print substring(0,19)
+//order by .title  print only 20 items
+//Return only the title of each movie, and if the array you receive has less than 20 movies, return all of them.
+const orderAlphabetically = movies.map(movie => {  
+  return movie.title;      
+});
+
+console.log(orderAlphabetically.sort());
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes() {}
