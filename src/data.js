@@ -2022,10 +2022,10 @@ const getAllDirectors = movies.map(movies =>movies.director);
 
   // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 // const howManyMovies = movies.filter(movie =>  movie.director == 'Steven Spielberg' || movie.genre == 'Drama');
-// console.log(howManyMovies);
+ //console.log(howManyMovies);
 
 const howManyMovies = movies.filter(movie =>  movie.director.includes('Steven Spielberg') && movie.genre.includes('Drama'));
-//console.log(howManyMovies);
+console.log(howManyMovies);
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 const scoresAverage = movies.reduce((result, currentData) => {
@@ -2061,7 +2061,7 @@ const orderAlphabetically = movies.map(movie => {
   return movie.title;      
 });
 
-console.log(orderAlphabetically.sort());
+//console.log(orderAlphabetically.sort());
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes() {}
